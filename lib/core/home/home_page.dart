@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:easy_padding/easy_padding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 import 'package:you_and_me/core/colors/palette.dart';
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage> {
       return PopupMenuItem<String>(
         value: text.toLowerCase(),
         child: SizedBox(
-          width: 35.w,
+          width: 30.w,
           height: 2.h,
           child: Texts.bold(
             text,
@@ -95,15 +96,16 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           PopupMenuButton(
-            color: Palette.white70,
+            color: Palette.white,
             iconColor: Palette.white,
             iconSize: 35,
             onSelected: (String value) {
+              HapticFeedback.lightImpact();
               print('opcion seleccionada: $value');
             },
             itemBuilder: (context) {
               return [
-                buildMenuItem('Te extraño ❤️'),
+                buildMenuItem('Te extraño 💕'),
                 buildMenuItem('Quiero verte 🥺'),
               ];
             },
