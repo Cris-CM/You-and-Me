@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:easy_padding/easy_padding.dart';
+import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -75,14 +76,26 @@ class _HomePageState extends State<HomePage> {
     PopupMenuItem<String> buildMenuItem(String text) {
       return PopupMenuItem<String>(
         value: text.toLowerCase(),
-        child: SizedBox(
-          width: 30.w,
-          height: 2.h,
+        child: MaterialButton(
+          onPressed: () async {
+            await EasyLauncher.sendToWhatsApp(
+                phone: 'https://chat.whatsapp.com/JqF1hUajzafFcyc1HP0IaE',
+                message: 'Te extraño'
+                // url: "https://youtu.be/7d0TuT6sLNc?si=71t02a9TuyuwqW5p",
+                // mode: Mode.platformDefault,
+                );
+          },
           child: Texts.bold(
             text,
             fontSize: 16,
           ),
         ),
+
+        //       SizedBox(
+        //   width: 30.w,
+        //   height: 2.h,
+
+        // ),
       );
     }
 
