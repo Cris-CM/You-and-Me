@@ -39,6 +39,8 @@ dependencies:
   sizer: ^3.0.0
   easy_padding: ^0.1.7
   easy_url_launcher: ^0.0.7
+  # form_builder_image_picker: ^4.1.0
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:

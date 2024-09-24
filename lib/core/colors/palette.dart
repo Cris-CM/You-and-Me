@@ -7,5 +7,6 @@ class Palette {
   static const white = Colors.white;
   static const pink = Colors.pink;
   static const grey = Colors.grey;
+  static final grey200 = Colors.grey[200];
   static const transparent = Colors.transparent;
 }
